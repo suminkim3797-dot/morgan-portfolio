@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact — Morgan Kim</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css">
+<style>
+:root{--black:#080808;--dark:#111111;--dark2:#1a1a1a;--white:#f5f5f5;--white-dim:rgba(245,245,245,0.5);--white-faint:rgba(245,245,245,0.05);--accent:#4da6ff;--border:rgba(245,245,245,0.08);}
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{background:var(--black);color:var(--white);font-family:'Pretendard',sans-serif;font-weight:400;overflow-x:hidden;min-height:100vh;}
+
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:28px 48px;border-bottom:1px solid var(--border);backdrop-filter:blur(20px);background:rgba(8,8,8,0.9);}
+.nav-logo{font-family:'Poppins',sans-serif;font-size:16px;font-weight:600;color:var(--white);text-decoration:none;}
+.nav-links{display:flex;gap:40px;list-style:none;}
+.nav-links a{font-size:11px;font-weight:500;letter-spacing:2px;text-transform:uppercase;color:var(--white-dim);text-decoration:none;transition:color 0.2s;}
+.nav-links a:hover,.nav-links a.active{color:var(--accent);}
+
+/* HERO */
+.hero{min-height:100vh;display:grid;grid-template-columns:1fr 1fr;padding:140px 48px 80px;gap:80px;align-items:center;border-bottom:1px solid var(--border);position:relative;overflow:hidden;}
+.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 50% 60% at 80% 50%,rgba(77,166,255,0.06) 0%,transparent 60%);}
+
+/* LEFT */
+.hero-left{position:relative;z-index:1;}
+.hero-eyebrow{font-size:11px;letter-spacing:3px;text-transform:uppercase;color:var(--accent);font-weight:500;margin-bottom:24px;display:flex;align-items:center;gap:12px;}
+.hero-eyebrow::before{content:'';width:24px;height:1px;background:var(--accent);}
+.hero-title{font-family:'Poppins',sans-serif;font-size:clamp(48px,6vw,88px);font-weight:600;line-height:1.0;letter-spacing:-2px;margin-bottom:32px;}
+.hero-title span{color:var(--accent);}
+.hero-desc{font-size:16px;color:var(--white-dim);font-weight:300;line-height:1.8;max-width:440px;margin-bottom:48px;}
+
+/* STATUS */
+.status-row{display:flex;align-items:center;gap:12px;margin-bottom:48px;}
+.status-dot{width:8px;height:8px;background:var(--accent);border-radius:50%;animation:pulse 2s ease infinite;}
+@keyframes pulse{0%,100%{opacity:1;transform:scale(1);}50%{opacity:0.5;transform:scale(0.8);}}
+.status-text{font-size:12px;letter-spacing:1.5px;color:var(--white-dim);font-weight:400;}
+.status-text strong{color:var(--accent);font-weight:600;}
+
+/* CTA BUTTONS */
+.cta-group{display:flex;gap:12px;flex-wrap:wrap;}
+.btn-primary{font-size:12px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--black);background:var(--accent);padding:16px 36px;border-radius:2px;text-decoration:none;transition:opacity 0.2s;display:inline-flex;align-items:center;gap:8px;}
+.btn-primary:hover{opacity:0.85;}
+.btn-secondary{font-size:12px;font-weight:500;letter-spacing:2px;text-transform:uppercase;color:var(--white-dim);background:transparent;border:1px solid var(--border);padding:16px 36px;border-radius:2px;text-decoration:none;transition:all 0.2s;display:inline-flex;align-items:center;gap:8px;}
+.btn-secondary:hover{border-color:var(--white-dim);color:var(--white);}
+
+/* RIGHT — Contact Cards */
+.hero-right{position:relative;z-index:1;display:flex;flex-direction:column;gap:3px;}
+
+.contact-card{background:var(--dark);border:1px solid var(--border);border-radius:4px;padding:32px 36px;display:flex;align-items:center;justify-content:space-between;text-decoration:none;color:var(--white);transition:all 0.3s;position:relative;overflow:hidden;}
+.contact-card::before{content:'';position:absolute;left:0;top:0;bottom:0;width:2px;background:var(--accent);transform:scaleY(0);transition:transform 0.3s;transform-origin:bottom;}
+.contact-card:hover{background:var(--dark2);border-color:rgba(77,166,255,0.2);}
+.contact-card:hover::before{transform:scaleY(1);}
+.contact-card:hover .card-arrow{transform:translate(4px,-4px);color:var(--accent);}
+
+.card-left{display:flex;flex-direction:column;gap:6px;}
+.card-type{font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--accent);font-weight:600;}
+.card-value{font-family:'Poppins',sans-serif;font-size:18px;font-weight:600;letter-spacing:-0.3px;color:var(--white);}
+.card-sub{font-size:13px;color:var(--white-dim);font-weight:300;}
+.card-arrow{font-size:20px;color:rgba(245,245,245,0.2);transition:all 0.3s;}
+
+/* INFO ROW */
+.info-row-bottom{display:grid;grid-template-columns:1fr 1fr;gap:3px;margin-top:0;}
+.info-mini{background:var(--dark);border:1px solid var(--border);border-radius:4px;padding:24px 28px;}
+.info-mini-label{font-size:10px;letter-spacing:2px;text-transform:uppercase;color:rgba(245,245,245,0.25);font-weight:500;margin-bottom:8px;}
+.info-mini-value{font-size:14px;color:var(--white-dim);font-weight:400;}
+
+/* BOTTOM STRIP */
+.bottom-strip{padding:64px 48px;display:grid;grid-template-columns:1fr 1fr 1fr;gap:1px;background:var(--border);border-top:1px solid var(--border);}
+.strip-item{background:var(--black);padding:40px 32px;}
+.strip-label{font-size:10px;letter-spacing:2px;text-transform:uppercase;color:rgba(245,245,245,0.25);font-weight:500;margin-bottom:12px;}
+.strip-value{font-family:'Poppins',sans-serif;font-size:18px;font-weight:600;letter-spacing:-0.3px;color:var(--white);}
+.strip-sub{font-size:13px;color:var(--white-dim);font-weight:300;margin-top:4px;}
+
+/* FOOTER */
+footer{border-top:1px solid var(--border);padding:40px 48px;display:flex;align-items:center;justify-content:space-between;}
+.footer-logo{font-family:'Poppins',sans-serif;font-size:14px;font-weight:600;color:rgba(245,245,245,0.25);}
+.footer-links{display:flex;gap:32px;}
+.footer-links a{font-size:11px;letter-spacing:2px;text-transform:uppercase;color:rgba(245,245,245,0.25);text-decoration:none;transition:color 0.2s;}
+.footer-links a:hover{color:var(--accent);}
+.footer-copy{font-size:11px;color:rgba(245,245,245,0.15);}
+</style>
+</head>
+<body>
+
+<nav>
+  <a class="nav-logo" href="#">Morgan®</a>
+  <ul class="nav-links">
+    <li><a href="#">Home</a></li>
+    <li><a href="#">Case Study</a></li>
+    <li><a href="#">Experiment</a></li>
+    <li><a href="#">About</a></li>
+    <li><a href="#" class="active">Contact</a></li>
+  </ul>
+</nav>
+
+<div class="hero">
+  <div class="hero-left">
+    <div class="hero-eyebrow">Get in Touch</div>
+    <h1 class="hero-title">Let's Build<br><span>Something.</span></h1>
+    <p class="hero-desc">Open to AI strategy, consulting, and research opportunities from September 2026. Always happy to connect, collaborate, or just have a conversation about AI and design.</p>
+    <div class="status-row">
+      <div class="status-dot"></div>
+      <span class="status-text"><strong>Available</strong> from September 2026 · London, UK</span>
+    </div>
+    <div class="cta-group">
+      <a class="btn-primary" href="mailto:sumin.kim3797@gmail.com">Send an Email ↗</a>
+      <a class="btn-secondary" href="https://www.linkedin.com/in/welcomwtosumin" target="_blank">LinkedIn ↗</a>
+    </div>
+  </div>
+
+  <div class="hero-right">
+    <a class="contact-card" href="mailto:sumin.kim3797@gmail.com">
+      <div class="card-left">
+        <span class="card-type">Email</span>
+        <span class="card-value">sumin.kim3797@gmail.com</span>
+        <span class="card-sub">Best for project enquiries & opportunities</span>
+      </div>
+      <span class="card-arrow">↗</span>
+    </a>
+
+    <a class="contact-card" href="https://www.linkedin.com/in/welcomwtosumin" target="_blank">
+      <div class="card-left">
+        <span class="card-type">LinkedIn</span>
+        <span class="card-value">linkedin.com/in/welcomwtosumin</span>
+        <span class="card-sub">Connect for networking & collaborations</span>
+      </div>
+      <span class="card-arrow">↗</span>
+    </a>
+
+    <a class="contact-card" href="#">
+      <div class="card-left">
+        <span class="card-type">Resume</span>
+        <span class="card-value">Download CV</span>
+        <span class="card-sub">AI Strategy & Consulting — Updated April 2026</span>
+      </div>
+      <span class="card-arrow">↓</span>
+    </a>
+
+    <div class="info-row-bottom">
+      <div class="info-mini">
+        <div class="info-mini-label">Location</div>
+        <div class="info-mini-value">London, UK</div>
+      </div>
+      <div class="info-mini">
+        <div class="info-mini-label">Open to</div>
+        <div class="info-mini-value">Hybrid & Remote</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="bottom-strip">
+  <div class="strip-item">
+    <div class="strip-label">Currently Studying</div>
+    <div class="strip-value">MSc Design & AI</div>
+    <div class="strip-sub">Loughborough University London</div>
+  </div>
+  <div class="strip-item">
+    <div class="strip-label">Target Role</div>
+    <div class="strip-value">AI Strategy Consulting</div>
+    <div class="strip-sub">Available from September 2026</div>
+  </div>
+  <div class="strip-item">
+    <div class="strip-label">Response Time</div>
+    <div class="strip-value">Within 24 hours</div>
+    <div class="strip-sub">For all enquiries</div>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-logo">Morgan®</div>
+  <div class="footer-links">
+    <a href="https://www.linkedin.com/in/welcomwtosumin" target="_blank">LinkedIn</a>
+    <a href="mailto:sumin.kim3797@gmail.com">Email</a>
+  </div>
+  <div class="footer-copy">© 2026 Morgan Kim</div>
+</footer>
+
+</body>
+</html>
