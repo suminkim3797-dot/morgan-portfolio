@@ -1,0 +1,255 @@
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+html,body{background:#050505;color:#f5f5f5;font-family:'Pretendard',-apple-system,sans-serif;font-weight:400;width:100%;overflow-x:hidden;}
+:root{--bg:#050505;--dark:#111;--dark2:#1a1a1a;--w:#f5f5f5;--wd:rgba(245,245,245,0.5);--a:#4da6ff;--br:rgba(245,245,245,0.08);}
+.wrap{max-width:900px;margin:0 auto;width:100%;}
+.sec{padding:80px 0;border-bottom:1px solid var(--br);}
+.eye{font-size:11px;letter-spacing:3px;text-transform:uppercase;color:var(--a);font-weight:500;margin-bottom:18px;display:flex;align-items:center;gap:10px;}
+.eye::before{content:'';width:20px;height:1px;background:var(--a);}
+.sec-title{font-family:'Poppins',sans-serif;font-size:32px;font-weight:600;letter-spacing:-1px;margin-bottom:40px;line-height:1.1;}
+.body-text{font-size:15px;line-height:1.8;color:var(--wd);font-weight:300;margin-bottom:20px;}
+.two-col{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:start;}
+.info-table{display:flex;flex-direction:column;gap:1px;background:var(--br);border:1px solid var(--br);}
+.ir{display:flex;background:var(--dark);padding:16px 20px;gap:20px;}
+.ik{font-size:10px;letter-spacing:1.5px;text-transform:uppercase;color:rgba(245,245,245,0.25);font-weight:500;min-width:90px;padding-top:2px;}
+.iv{font-size:13px;color:var(--wd);line-height:1.6;}
+.three-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--br);border:1px solid var(--br);}
+.gc{background:var(--dark);padding:28px 24px;}
+.gc:hover{background:var(--dark2);}
+.gl{font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--a);margin-bottom:10px;font-weight:500;}
+.gt{font-size:14px;font-weight:600;margin-bottom:8px;}
+.gd{font-size:13px;color:var(--wd);font-weight:300;line-height:1.6;}
+.hyp{background:rgba(77,166,255,0.06);border:1px solid rgba(77,166,255,0.2);border-radius:4px;padding:40px;margin-bottom:3px;}
+.hyp-if{font-size:13px;letter-spacing:2px;text-transform:uppercase;color:var(--a);margin-bottom:12px;font-weight:500;}
+.hyp-sub{font-size:14px;color:var(--wd);font-weight:300;margin-bottom:16px;}
+.hyp-then{font-family:'Poppins',sans-serif;font-size:20px;font-weight:600;letter-spacing:-0.5px;line-height:1.4;}
+.steps{display:flex;flex-direction:column;gap:1px;background:var(--br);border:1px solid var(--br);}
+.step{background:var(--dark);padding:32px;display:grid;grid-template-columns:56px 1fr auto;gap:32px;align-items:start;}
+.step:hover{background:var(--dark2);}
+.sn{font-family:'Poppins',sans-serif;font-size:12px;font-weight:600;color:var(--a);letter-spacing:1px;padding-top:4px;}
+.st{font-family:'Poppins',sans-serif;font-size:18px;font-weight:600;letter-spacing:-0.3px;margin-bottom:8px;}
+.sd{font-size:13px;color:var(--wd);font-weight:300;line-height:1.6;}
+.si{font-size:12px;color:var(--a);font-weight:500;margin-top:8px;}
+.stag{font-size:10px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;color:var(--a);border:1px solid rgba(77,166,255,0.3);padding:4px 10px;border-radius:2px;white-space:nowrap;}
+.img-wrap{margin-top:40px;border:1px solid var(--br);border-radius:4px;overflow:hidden;}
+.img-label{padding:16px 24px;background:var(--dark);border-bottom:1px solid var(--br);display:flex;justify-content:space-between;align-items:center;}
+.img-label-l{font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--a);font-weight:600;}
+.img-label-r{font-size:12px;color:var(--wd);font-weight:300;}
+.img-wrap img{width:100%;display:block;}
+.metrics{display:flex;flex-direction:column;gap:1px;background:var(--br);border:1px solid var(--br);}
+.metric{background:var(--dark);padding:20px 24px;display:flex;align-items:center;gap:16px;}
+.metric:hover{background:var(--dark2);}
+.md{width:5px;height:5px;border-radius:50%;background:var(--a);flex-shrink:0;}
+.mt{font-size:13px;color:var(--wd);font-weight:300;line-height:1.5;}
+.note{margin-top:20px;padding:20px 24px;border:1px solid var(--br);border-radius:4px;}
+.note p{font-size:12px;color:var(--wd);font-weight:300;font-style:italic;line-height:1.6;}
+.ref-grid{display:grid;grid-template-columns:1fr 1fr;gap:40px;}
+.qb{border-left:2px solid var(--a);padding:20px 24px;background:var(--dark);margin-bottom:24px;}
+.qbn{font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--a);font-weight:600;margin-bottom:8px;}
+.qbt{font-size:14px;color:var(--wd);font-weight:300;line-height:1.6;font-style:italic;}
+.learnings{display:flex;flex-direction:column;gap:1px;background:var(--br);border:1px solid var(--br);}
+.litem{background:var(--dark);padding:20px 24px;display:flex;gap:16px;align-items:flex-start;}
+.litem:hover{background:var(--dark2);}
+.li{font-size:16px;flex-shrink:0;}
+.lt{font-size:13px;font-weight:600;margin-bottom:4px;}
+.ld{font-size:12px;color:var(--wd);font-weight:300;line-height:1.5;}
+.score{display:inline-flex;align-items:center;gap:10px;background:rgba(77,166,255,0.1);border:1px solid rgba(77,166,255,0.25);padding:10px 20px;border-radius:2px;margin-bottom:24px;}
+.score-n{font-family:'Poppins',sans-serif;font-size:28px;font-weight:600;color:var(--a);letter-spacing:-1px;}
+.score-l{font-size:11px;color:var(--wd);font-weight:300;}
+.quote-big{font-family:'Poppins',sans-serif;font-size:18px;font-weight:500;line-height:1.5;letter-spacing:-0.3px;border-left:2px solid var(--a);padding-left:20px;margin-bottom:24px;}
+.r-text{font-size:14px;color:var(--wd);font-weight:300;line-height:1.8;margin-bottom:16px;}
+.vis-box{background:rgba(77,166,255,0.06);border:1px solid rgba(77,166,255,0.2);padding:28px;border-radius:4px;margin-top:3px;}
+.vl{font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--a);font-weight:600;margin-bottom:10px;}
+.vt{font-family:'Poppins',sans-serif;font-size:20px;font-weight:600;letter-spacing:-0.5px;}
+.nav-bot{padding:48px 0;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--br);}
+.nav-bot a{text-decoration:none;color:var(--wd);transition:color 0.2s;}
+.nav-bot a:hover{color:var(--a);}
+.nd{font-size:10px;letter-spacing:2px;text-transform:uppercase;color:rgba(245,245,245,0.25);margin-bottom:4px;}
+.np{font-family:'Poppins',sans-serif;font-size:18px;font-weight:600;letter-spacing:-0.3px;}
+.hero{padding:80px 0;border-bottom:1px solid var(--br);position:relative;overflow:hidden;}
+.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 60% 50% at 70% 30%,rgba(77,166,255,0.05) 0%,transparent 60%);}
+.tags{display:flex;gap:8px;margin-bottom:24px;}
+.tag{font-size:10px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;padding:4px 12px;border-radius:2px;}
+.tag.f{background:var(--a);color:#050505;}
+.tag.o{border:1px solid var(--br);color:var(--wd);}
+.h1{font-family:'Poppins',sans-serif;font-size:clamp(40px,5vw,80px);font-weight:600;line-height:1;letter-spacing:-2px;margin-bottom:24px;}
+.h1 span{color:var(--a);}
+.hdesc{font-size:16px;color:var(--wd);font-weight:300;line-height:1.7;max-width:600px;margin-bottom:40px;}
+.hmeta{display:flex;gap:40px;flex-wrap:wrap;}
+.hmi{display:flex;flex-direction:column;gap:3px;}
+.hml{font-size:10px;letter-spacing:2px;text-transform:uppercase;color:rgba(245,245,245,0.25);font-weight:500;}
+.hmv{font-size:12px;color:var(--wd);}
+footer{padding:32px 0;display:flex;align-items:center;justify-content:space-between;}
+.fl{font-family:'Poppins',sans-serif;font-size:13px;font-weight:600;color:rgba(245,245,245,0.25);}
+.fls{display:flex;gap:24px;}
+.fls a{font-size:10px;letter-spacing:2px;text-transform:uppercase;color:rgba(245,245,245,0.25);text-decoration:none;}
+.fls a:hover{color:var(--a);}
+.fc{font-size:10px;color:rgba(245,245,245,0.15);}
+</style>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css">
+
+<div style="background:#050505;min-height:100vh;padding:0 150px;">
+<div class="wrap">
+
+<!-- HERO -->
+<div class="hero">
+<div class="tags">
+  <span class="tag f">AI Strategy</span>
+  <span class="tag o">Experience Design</span>
+  <span class="tag o">Group + Personal Extension</span>
+</div>
+<h1 class="h1">Putumayo<br><span>World Music.</span></h1>
+<p class="hdesc">From Western curation to participatory cultural exchange — redesigning how a world music brand creates authentic cultural value through immersive experience design and an AI-powered curation strategy.</p>
+<div class="hmeta">
+  <div class="hmi"><span class="hml">Role</span><span class="hmv">Experience Strategist</span></div>
+  <div class="hmi"><span class="hml">Year</span><span class="hmv">2026</span></div>
+  <div class="hmi"><span class="hml">Type</span><span class="hmv">Group Project + Personal Extension</span></div>
+  <div class="hmi"><span class="hml">Score</span><span class="hmv">83/100</span></div>
+</div>
+</div>
+
+<!-- 01 OVERVIEW -->
+<div class="sec">
+<div class="eye">01 — Overview</div>
+<div class="two-col">
+<div>
+  <div class="sec-title">Context & Problem</div>
+  <p class="body-text">Putumayo built its identity on making the world feel smaller — bright, illustrated CDs of world music, stacked next to your coffee at Starbucks. It worked. For a while. Then streaming arrived and so did the cultural depth that made Putumayo worth caring about.</p>
+  <p class="body-text">But the problem runs deeper. Putumayo's curation has always been shaped by a Western editorial lens — Asia reduced to Middle Eastern sounds, Africa collapsed into a single category despite hundreds of distinct cultures.</p>
+</div>
+<div class="info-table">
+  <div class="ir"><span class="ik">Brand</span><span class="iv">Putumayo World Music — Record label & streaming platform</span></div>
+  <div class="ir"><span class="ik">Problem</span><span class="iv">Western editorial bias, passive consumption, no cultural context</span></div>
+  <div class="ir"><span class="ik">Goal</span><span class="iv">Move from passive listening to participatory cultural exchange</span></div>
+  <div class="ir"><span class="ik">Context</span><span class="iv">WOMAD Festival 2026, Wiltshire, UK</span></div>
+  <div class="ir"><span class="ik">Methods</span><span class="iv">1:1 interviews · Persona · CJM · Pine & Gilmore · Prioritisation matrix</span></div>
+</div>
+</div>
+</div>
+
+<!-- 02 RESEARCH -->
+<div class="sec">
+<div class="eye">02 — Research</div>
+<div class="sec-title">What Users Actually Said</div>
+<div class="three-grid" style="margin-bottom:3px;">
+  <div class="gc"><div class="gl">Fernando · Mexico · M · 24</div><div class="gd" style="font-style:italic;margin-bottom:8px;">"I was influenced a lot from my parent's music taste. That's how I experienced world music for the first time."</div><div class="gd" style="font-style:italic;">"Putumayo's album design presented our culture mood well."</div></div>
+  <div class="gc"><div class="gl">Vivian · China · W · 22</div><div class="gd" style="font-style:italic;margin-bottom:8px;">"I don't know why they put category name as Asia — they only have Middle-East Asia music."</div><div class="gd" style="font-style:italic;">"Peking Opera is our culture music, but modern Chinese pop mixed with Western style."</div></div>
+  <div class="gc"><div class="gl">Moses · Kenya · M · 50</div><div class="gd" style="font-style:italic;margin-bottom:8px;">"Africa has very diverse tribes, so it's difficult to identify as 'African music'."</div><div class="gd" style="font-style:italic;">"Our music is completed not only with rhythm and instruments, but also dance and dress."</div></div>
+</div>
+<div class="three-grid">
+  <div class="gc"><div class="gl">Insight 01</div><div class="gt">Cultural Bias in Curation</div><div class="gd">Asia is largely absent beyond Middle Eastern music. Africa's vast diversity is collapsed into a single category. Users experience music without cultural context.</div></div>
+  <div class="gc"><div class="gl">Insight 02</div><div class="gt">Passive Consumption — No Depth</div><div class="gd">No mechanism for users to understand why a track belongs to a culture. Low retention, low emotional connection, no advocacy behaviour.</div></div>
+  <div class="gc"><div class="gl">Insight 03</div><div class="gt">Identity & Heritage Matter</div><div class="gd">Users from underrepresented cultures feel unseen or misrepresented. Cultural music is deeply tied to family, identity, and memory.</div></div>
+</div>
+</div>
+
+<!-- 03 DEFINE -->
+<div class="sec">
+<div class="eye">03 — Define</div>
+<div class="sec-title">Persona & Customer Journey</div>
+<div class="three-grid" style="margin-bottom:3px;">
+  <div class="gc"><div class="gl">Who She Is</div><div class="gt">Janet Alves, 37 — London</div><div class="gd">Values cultural identity preservation. Wants her child to feel proud of their heritage while exploring global cultures. Regularly attends family-friendly festivals.</div></div>
+  <div class="gc"><div class="gl">What She Needs</div><div class="gt">Authentic cultural representation</div><div class="gd">A safe, age-appropriate cultural experience. Interactive music that goes beyond passive listening. Meaningful parent-child bonding.</div></div>
+  <div class="gc"><div class="gl">Her Challenge</div><div class="gt">Hard to find trustworthy experiences</div><div class="gd">Many platforms provide passive listening but lack interaction. Uncertainty about age-appropriateness of cultural content.</div></div>
+</div>
+<div style="background:var(--dark);border:1px solid var(--br);padding:28px;border-radius:4px;">
+  <div class="gl" style="margin-bottom:12px;">CJM Key Finding</div>
+  <p class="body-text" style="margin:0;">The Customer Journey Map revealed a critical drop-off: Janet starts <strong style="color:#f5f5f5;">curious</strong>, but becomes emotionally disengaged during <strong style="color:var(--a);">Use and Retention</strong> stages. High initial curiosity → rapid emotional disengagement → no advocacy.</p>
+</div>
+</div>
+
+<!-- 04 HYPOTHESIS -->
+<div class="sec">
+<div class="eye">04 — Hypothesis</div>
+<div class="sec-title">Strategic Direction</div>
+<div class="hyp">
+  <div class="hyp-if">If we...</div>
+  <div class="hyp-sub">Shift Putumayo from a centralised curatorial authority to a participatory model — where regional artists, local record labels, and audiences co-create the experience —</div>
+  <div class="hyp-then">Then users will develop a deeper cultural connection and perceive the brand as trustworthy and authentic.</div>
+</div>
+<div class="three-grid">
+  <div class="gc"><div class="gl">Principle 01</div><div class="gt">Transparent</div><div class="gd">Show why music is categorised the way it is. Transparent curation notes and cultural context at every touchpoint.</div></div>
+  <div class="gc"><div class="gl">Principle 02</div><div class="gt">Trustworthy</div><div class="gd">Co-curate with regional partners, not just Western editors. Arnstein's Ladder — toward Citizen Control in playlisting.</div></div>
+  <div class="gc"><div class="gl">Principle 03</div><div class="gt">Participatory</div><div class="gd">Users contribute to the next playlist, not just consume. From passive listener to active co-creator of cultural value.</div></div>
+</div>
+</div>
+
+<!-- 05 SOLUTION -->
+<div class="sec">
+<div class="eye">05 — Solution</div>
+<div class="sec-title">WOMAD Pop-up 2026<br>3-Zone Experience</div>
+<p class="body-text" style="max-width:640px;margin-bottom:40px;">A three-zone cultural journey at WOMAD Festival — moving visitors from passive absorption to active co-creation, leaving with genuine cultural understanding and a contribution to Putumayo's next playlist.</p>
+<div class="steps">
+  <div class="step"><div class="sn">Zone 1</div><div><div class="st">Music Discovery</div><div class="sd">Six continent-based jukeboxes co-curated with regional record labels. Transparent curation notes and cultural video content. Visitors select postcards with QR codes — their choice becomes soft data for the next Putumayo playlist.</div><div class="si">→ Increased perceived authenticity and brand trust</div></div><div class="stag">Educational</div></div>
+  <div class="step"><div class="sn">Zone 2</div><div><div class="st">Motion Communication</div><div class="sd">Motion-capture visuals respond to dance in real time — abstract shapes for full inclusivity. Sound becomes shared sensory interaction at the emotional peak of the experience. Culture felt through the body, not just the ear.</div><div class="si">→ Peak emotional engagement, embodied cultural participation</div></div><div class="stag">Escapist</div></div>
+  <div class="step"><div class="sn">Zone 3</div><div><div class="st">Creative Workshop</div><div class="sd">Participants colour illustrated postcards and "send" them via a postbox scanner. Their preference data informs future playlist curation. Staff explain data usage clearly — consent-based participation throughout.</div><div class="si">→ User becomes co-creator, reciprocal artist-audience relationship</div></div><div class="stag">Creative</div></div>
+</div>
+<div class="img-wrap">
+  <div class="img-label"><span class="img-label-l">Pop-up Floorplan</span><span class="img-label-r">WOMAD Festival 2026 · Wiltshire, UK</span></div>
+  <img src="[FLOORPLAN_IMAGE_URL]" alt="Putumayo WOMAD Pop-up Floorplan">
+</div>
+</div>
+
+<!-- 06 AI EXTENSION -->
+<div class="sec">
+<div class="eye">06 — Personal Extension</div>
+<div class="sec-title">AI Curating Service Concept</div>
+<p class="body-text" style="max-width:640px;margin-bottom:40px;">The pop-up generates real behavioural data — which tracks people gravitated toward, which postcards they chose, how they moved in Zone 2. This is seed data for a bias-aware AI curation engine.</p>
+<div class="three-grid" style="margin-bottom:3px;">
+  <div class="gc"><div class="gl">Feature 01</div><div class="gt">Cultural Context Engine</div><div class="gd">Tags each track by instrument, rhythm origin, and cultural tradition — not just geography. Replacing broad generalisations like "African music".</div></div>
+  <div class="gc"><div class="gl">Feature 02</div><div class="gt">Bias Detection Layer</div><div class="gd">Flags when a regional category is under-represented or over-generalised. Structurally fairer curation addressing Asia/Africa blind spots.</div></div>
+  <div class="gc"><div class="gl">Feature 03</div><div class="gt">Explainable Curation</div><div class="gd">Every recommendation includes why it was suggested and what culture it comes from. Music you feel, culture you understand.</div></div>
+</div>
+<div class="vis-box"><div class="vl">Product Vision</div><div class="vt">"Music you feel. Culture you understand."</div></div>
+</div>
+
+<!-- 07 METRICS -->
+<div class="sec">
+<div class="eye">07 — Impact</div>
+<div class="sec-title">How I Would Measure Success</div>
+<div class="metrics">
+  <div class="metric"><div class="md"></div><div class="mt">Shift in perceived brand authenticity — pre/post experience survey at WOMAD</div></div>
+  <div class="metric"><div class="md"></div><div class="mt">Postcard scan rate as a proxy for co-creation engagement and consent-based data participation</div></div>
+  <div class="metric"><div class="md"></div><div class="mt">Playlist diversity index: regional distribution of user-selected tracks across 6 continents</div></div>
+  <div class="metric"><div class="md"></div><div class="mt">Return engagement rate with Putumayo's streaming service post-festival</div></div>
+  <div class="metric"><div class="md"></div><div class="mt">Bias score improvement across AI-curated playlists over time</div></div>
+</div>
+<div class="note"><p>This project was conducted within an academic group sprint, scoring 83/100. Success metrics were defined conceptually to demonstrate measurement readiness and product thinking.</p></div>
+</div>
+
+<!-- 08 REFLECTION -->
+<div class="sec">
+<div class="eye">08 — Reflection</div>
+<div class="sec-title">What I Learned</div>
+<div class="ref-grid">
+<div>
+  <div class="score"><span class="score-n">83</span><div class="score-l">Academic score<br>out of 100</div></div>
+  <div class="quote-big">"Designing for cultural experiences isn't just about aesthetics — it's about power."</div>
+  <p class="r-text">Who gets to decide what "world music" sounds like? This project pushed me to apply UX frameworks not just to improve usability, but to challenge the ethical structure of a product itself.</p>
+  <p class="r-text">The AI product concept isn't just academic. I want to build systems that make algorithmic curation more transparent and culturally accountable.</p>
+</div>
+<div class="learnings">
+  <div class="litem"><div class="li">◈</div><div><div class="lt">Cultural bias is invisible to those it doesn't affect</div><div class="ld">Surface it through research, not assumption. The 1:1 interviews were the most important part.</div></div></div>
+  <div class="litem"><div class="li">◎</div><div><div class="lt">Co-creation is most powerful when the output is real</div><div class="ld">Participants shaped an actual future playlist — not a fictional exercise. That made engagement genuine.</div></div></div>
+  <div class="litem"><div class="li">◇</div><div><div class="lt">Ethical design isn't a constraint — it was the experience</div><div class="ld">Moving toward Citizen Control became the design brief itself, not just a consideration.</div></div></div>
+  <div class="litem"><div class="li">○</div><div><div class="lt">Physical data seeds AI in ways digital data can't</div><div class="ld">Postcard selections and motion data carry embodied preference signals that passive streaming misses.</div></div></div>
+</div>
+</div>
+</div>
+
+<!-- NAV BOTTOM -->
+<div class="nav-bot">
+  <a href="/casestudy-psb"><div class="nd">← Previous</div><div class="np">People Skills Business</div></a>
+  <a href="/casestudy-yeogi" style="text-align:right"><div class="nd">Next →</div><div class="np">Yeogi — Travel Platform</div></a>
+</div>
+
+<footer>
+  <div class="fl">Morgan®</div>
+  <div class="fls"><a href="#">LinkedIn</a><a href="#">Email</a></div>
+  <div class="fc">© 2026 Morgan Kim</div>
+</footer>
+
+</div>
+</div>
